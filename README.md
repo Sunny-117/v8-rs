@@ -27,6 +27,35 @@ v8-rs/
 └── README.md           # This file
 ```
 
+## Documentation
+
+### 📚 Complete Tutorial
+
+A comprehensive step-by-step tutorial is available in the `docs/` directory:
+
+- **[Tutorial Index](./docs/README.md)** - Start here for the complete learning path
+- **[Quick Start Guide](./docs/QUICKSTART.md)** - Get running in 10 minutes
+
+### Tutorial Chapters
+
+1. [Project Setup](./docs/01-project-setup.md) - Initialize project and core types
+2. [Lexer](./docs/02-lexer.md) - Tokenize source code
+3. [AST](./docs/03-ast.md) - Abstract syntax tree design
+4. [Parser](./docs/04-parser.md) - Recursive descent parsing
+5. [Scope](./docs/05-scope.md) - Variable scope management
+6. [Bytecode](./docs/06-bytecode.md) - Instruction set design
+7. [Codegen](./docs/07-codegen.md) - Bytecode generation
+8. [Interpreter](./docs/08-interpreter.md) - Stack-based VM
+9. [Engine](./docs/09-engine.md) - Component integration
+10. [Conclusion](./docs/10-conclusion.md) - Summary and next steps
+
+Each chapter includes:
+- Detailed explanations of design decisions
+- Code examples with annotations
+- Common pitfalls and solutions
+- Exercises for practice
+- Testing strategies
+
 ## Features Implemented
 
 ### ✅ Core Components
