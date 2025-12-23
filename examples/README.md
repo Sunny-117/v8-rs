@@ -22,7 +22,7 @@ Basic variable declaration and arithmetic.
 
 ```bash
 $ ./target/release/v8_rs examples/hello.js
-Number(84.0)
+84
 ```
 
 ### 2. arithmetic.js
@@ -31,7 +31,7 @@ Multiple variables and complex arithmetic expressions.
 
 ```bash
 $ ./target/release/v8_rs examples/arithmetic.js
-Number(750.0)
+750
 ```
 
 ### 3. fibonacci.js
@@ -40,7 +40,7 @@ Computing Fibonacci sequence numbers using variables.
 
 ```bash
 $ ./target/release/v8_rs examples/fibonacci.js
-Number(8.0)
+8
 ```
 
 ### 4. error.js

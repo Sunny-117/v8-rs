@@ -52,7 +52,7 @@ fn run_repl() {
                 }
                 
                 match engine.execute(input) {
-                    Ok(result) => println!("{:?}", result),
+                    Ok(result) => println!("{}", result),
                     Err(err) => eprintln!("Error: {}", err),
                 }
             }
@@ -80,7 +80,7 @@ fn run_file(filename: &str) {
         Ok(result) => {
             // 只在非 Undefined 时打印结果
             if !matches!(result, v8_rs::Value::Undefined) {
-                println!("{:?}", result);
+                println!("{}", result);
             }
         }
         Err(err) => {

@@ -70,18 +70,18 @@ V8-RS JavaScript Engine v0.1.0
 Type JavaScript code or 'exit' to quit
 
 > let x = 10
-Number(10.0)
+10
 > let y = 20
-Number(20.0)
+20
 > x + y
-Number(30.0)
+30
 > exit
 Goodbye!
 
 # 执行 JavaScript 文件
 $ echo "let x = 5; x * x" > script.js
 $ ./target/release/v8_rs script.js
-Number(25.0)
+25
 ```
 
 #### 作为 Rust 库使用
@@ -184,18 +184,18 @@ V8-RS JavaScript Engine v0.1.0
 Type JavaScript code or 'exit' to quit
 
 > let x = 10
-Number(10.0)
+10
 > let y = 20
-Number(20.0)
+20
 > x + y
-Number(30.0)
+30
 > exit
 Goodbye!
 
 # Execute JavaScript file
 $ echo "let x = 5; x * x" > script.js
 $ ./target/release/v8_rs script.js
-Number(25.0)
+25
 ```
 
 #### As a Rust Library

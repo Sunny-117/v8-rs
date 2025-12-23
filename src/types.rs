@@ -1,5 +1,7 @@
 // Core data types for V8-RS
 
+use std::fmt;
+
 /// Represents a JavaScript value in the engine
 #[derive(Debug, Clone, PartialEq)]
 pub enum Value {
@@ -9,6 +11,25 @@ pub enum Value {
     Function(FunctionId),
     /// Undefined value
     Undefined,
+}
+
+impl fmt::Display for Value {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Value::Number(n) => {
+                // Format numbers like Node.js/V8
+                if n.fract() == 0.0 && n.is_finite() {
+                    // Integer-like numbers: print without decimal
+                    write!(f, "{}", *n as i64)
+                } else {
+                    // Floating point numbers: print with decimals
+                    write!(f, "{}", n)
+                }
+            }
+            Value::Function(id) => write!(f, "[Function: {}]", id),
+            Value::Undefined => write!(f, "undefined"),
+        }
+    }
 }
 
 /// Function identifier type

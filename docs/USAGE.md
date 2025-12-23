@@ -55,19 +55,19 @@ Type JavaScript code or 'exit' to quit
 
 ```bash
 > 42
-Number(42.0)
+42
 
 > let x = 10
-Number(10.0)
+10
 
 > let y = 20
-Number(20.0)
+20
 
 > x + y
-Number(30.0)
+30
 
 > (x + y) * 2
-Number(60.0)
+60
 
 > exit
 Goodbye!
@@ -93,7 +93,7 @@ a + b
 执行：
 ```bash
 $ ./target/release/v8_rs example.js
-Number(30.0)
+30
 ```
 
 ### 支持的 JavaScript 特性
@@ -280,19 +280,19 @@ In the REPL you can:
 
 ```bash
 > 42
-Number(42.0)
+42
 
 > let x = 10
-Number(10.0)
+10
 
 > let y = 20
-Number(20.0)
+20
 
 > x + y
-Number(30.0)
+30
 
 > (x + y) * 2
-Number(60.0)
+60
 
 > exit
 Goodbye!
@@ -318,7 +318,7 @@ a + b
 Execute:
 ```bash
 $ ./target/release/v8_rs example.js
-Number(30.0)
+30
 ```
 
 ### Supported JavaScript Features
