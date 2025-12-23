@@ -3,6 +3,9 @@
 use crate::bytecode::{BytecodeChunk, Instruction};
 use crate::error::RuntimeError;
 use crate::types::{FunctionId, Value};
+use crate::profiler::HotspotProfiler;
+use std::rc::Rc;
+use std::cell::RefCell;
 
 /// Call frame for function execution
 #[derive(Debug, Clone)]
@@ -45,18 +48,42 @@ impl CallFrame {
 /// Ignition interpreter
 pub struct Ignition {
     call_stack: Vec<CallFrame>,
+    profiler: Rc<RefCell<HotspotProfiler>>,
 }
 
 impl Ignition {
     pub fn new() -> Self {
         Self {
             call_stack: Vec::new(),
+            profiler: Rc::new(RefCell::new(HotspotProfiler::default())),
         }
+    }
+    
+    /// Create interpreter with a shared profiler
+    pub fn with_profiler(profiler: Rc<RefCell<HotspotProfiler>>) -> Self {
+        Self {
+            call_stack: Vec::new(),
+            profiler,
+        }
+    }
+    
+    /// Get a reference to the profiler
+    pub fn profiler(&self) -> Rc<RefCell<HotspotProfiler>> {
+        self.profiler.clone()
     }
     
     /// Execute a bytecode chunk
     pub fn execute(&mut self, chunk: BytecodeChunk) -> Result<Value, RuntimeError> {
-        let frame = CallFrame::new(chunk, 0);
+        let func_id = 0; // Default function ID for main execution
+        self.execute_with_id(chunk, func_id)
+    }
+    
+    /// Execute a bytecode chunk with a specific function ID
+    pub fn execute_with_id(&mut self, chunk: BytecodeChunk, func_id: FunctionId) -> Result<Value, RuntimeError> {
+        // Record execution in profiler
+        self.profiler.borrow_mut().record_execution(func_id);
+        
+        let frame = CallFrame::new(chunk, func_id);
         self.call_stack.push(frame);
         
         self.run()
