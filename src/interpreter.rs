@@ -248,6 +248,17 @@ impl Ignition {
                 }
             }
             
+            Instruction::Print => {
+                // Print instruction: pop value from stack and print it
+                if let Some(value) = frame.stack.pop() {
+                    println!("{}", value);
+                    // Push undefined back (print returns undefined)
+                    frame.stack.push(Value::Undefined);
+                } else {
+                    return Err(RuntimeError::StackOverflow);
+                }
+            }
+            
             Instruction::Call(_arg_count) => {
                 // Simplified: just continue execution
                 // Full implementation would handle function calls

@@ -75,13 +75,19 @@ Type JavaScript code or 'exit' to quit
 20
 > x + y
 30
+> print(x + y)
+30
 > exit
 Goodbye!
 
 # 执行 JavaScript 文件
-$ echo "let x = 5; x * x" > script.js
+$ cat > script.js << 'EOF'
+let x = 5;
+let y = 10;
+print(x * y);
+EOF
 $ ./target/release/v8_rs script.js
-25
+50
 ```
 
 #### 作为 Rust 库使用
@@ -189,13 +195,19 @@ Type JavaScript code or 'exit' to quit
 20
 > x + y
 30
+> print(x + y)
+30
 > exit
 Goodbye!
 
 # Execute JavaScript file
-$ echo "let x = 5; x * x" > script.js
+$ cat > script.js << 'EOF'
+let x = 5;
+let y = 10;
+print(x * y);
+EOF
 $ ./target/release/v8_rs script.js
-25
+50
 ```
 
 #### As a Rust Library

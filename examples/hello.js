@@ -1,2 +1,2 @@
 let message = 42;
-message * 2
+print(message * 2)

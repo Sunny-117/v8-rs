@@ -69,6 +69,17 @@ impl BytecodeGenerator {
             }
             
             ASTNode::CallExpr { callee, args, .. } => {
+                // Check if this is a call to the built-in print() function
+                if let ASTNode::Identifier { name, .. } = &**callee {
+                    if name == "print" && args.len() == 1 {
+                        // Special handling for print(arg)
+                        self.compile_node(&args[0]);
+                        self.chunk.emit(Instruction::Print);
+                        return;
+                    }
+                }
+                
+                // General function call handling
                 // Compile callee
                 self.compile_node(callee);
                 

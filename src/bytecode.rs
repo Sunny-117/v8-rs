@@ -19,6 +19,8 @@ pub enum Instruction {
     Mul,
     /// Divide two values
     Div,
+    /// Print the top value on the stack (for console.log/print)
+    Print,
     /// Call a function with N arguments
     Call(usize),
     /// Return from function

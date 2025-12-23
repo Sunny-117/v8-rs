@@ -77,11 +77,9 @@ fn run_file(filename: &str) {
     // 执行代码
     let mut engine = Engine::new();
     match engine.execute(&source) {
-        Ok(result) => {
-            // 只在非 Undefined 时打印结果
-            if !matches!(result, v8_rs::Value::Undefined) {
-                println!("{}", result);
-            }
+        Ok(_result) => {
+            // 文件模式：不打印结果，只执行代码
+            // 如果需要输出，应该在 JS 代码中使用 console.log()
         }
         Err(err) => {
             eprintln!("Error: {}", err);

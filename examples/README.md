@@ -69,7 +69,7 @@ Create a new `.js` file with JavaScript code:
 ```javascript
 let x = 10;
 let y = 20;
-x + y
+print(x + y);
 ```
 
 Run it:
@@ -80,6 +80,15 @@ Run it:
 ./target/release/v8_rs your_example.js
 ```
 
+**Important / 重要提示:** 
+- In file mode, expressions are NOT automatically printed
+- Use `print()` function to output values
+- In REPL mode, expressions are automatically displayed
+
+- 在文件模式下，表达式不会自动打印
+- 使用 `print()` 函数来输出值
+- 在 REPL 模式下，表达式会自动显示
+
 ## Supported Features / 支持的特性
 
 Current examples demonstrate:
@@ -89,6 +98,7 @@ Current examples demonstrate:
 - ✅ Variable declarations (`let`) / 变量声明
 - ✅ Arithmetic operations (`+`, `-`, `*`, `/`) / 算术运算
 - ✅ Complex expressions / 复杂表达式
+- ✅ Print function (`print()`) / 打印函数
 - ✅ Error handling / 错误处理
 
 ## Limitations / 限制

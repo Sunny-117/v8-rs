@@ -5,4 +5,4 @@ let d = b + c;
 let e = c + d;
 let f = d + e;
 let g = e + f;
-g
+print(g)

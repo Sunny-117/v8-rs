@@ -129,6 +129,16 @@ let x = 10;
 let y = x * 2 + 5;
 ```
 
+#### ✅ 打印输出
+```javascript
+print(42);              // 打印: 42
+let x = 10;
+print(x * 2);           // 打印: 20
+print((5 + 3) * 2);     // 打印: 16
+```
+
+**注意：** 在文件模式下，表达式不会自动打印。如果需要输出，请使用 `print()` 函数。
+
 ### 错误处理
 
 V8-RS 提供清晰的错误信息：
@@ -353,6 +363,16 @@ let z = x + y;
 let x = 10;
 let y = x * 2 + 5;
 ```
+
+#### ✅ Print Output
+```javascript
+print(42);              // Prints: 42
+let x = 10;
+print(x * 2);           // Prints: 20
+print((5 + 3) * 2);     // Prints: 16
+```
+
+**Note:** In file mode, expressions are not automatically printed. Use the `print()` function for output.
 
 ### Error Handling
 

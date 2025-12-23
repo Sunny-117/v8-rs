@@ -109,6 +109,15 @@ impl TurboFan {
                     // Control flow is simplified in IR for now
                     // Full implementation would handle basic blocks
                 }
+                
+                Instruction::Print => {
+                    // Print instruction: pop value (side effect)
+                    // For IR purposes, we just pop and push a constant 0 (representing undefined)
+                    if let Some(_value) = self.value_stack.pop() {
+                        let undef_id = ir.add_constant(0.0); // Represent undefined as 0
+                        self.value_stack.push(undef_id);
+                    }
+                }
             }
         }
         
