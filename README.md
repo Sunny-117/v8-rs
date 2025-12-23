@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**一个用 Rust 实现的教育性 JavaScript 引擎**
+**一个用 Rust 实现的 JavaScript 引擎**
 
 [![Tests](https://img.shields.io/badge/tests-67%20passing-brightgreen)]()
 [![Rust](https://img.shields.io/badge/rust-2021-orange)]()
@@ -100,7 +100,7 @@ fn main() {
 
 ### 📖 About
 
-V8-RS is an educational JavaScript engine written in Rust, designed to help developers understand how modern JavaScript engines (like V8) work under the hood.
+V8-RS is a JavaScript engine written in Rust, designed to help developers understand how modern JavaScript engines (like V8) work under the hood.
 
 This project implements a complete compiler frontend and bytecode interpreter, including lexical analysis, parsing, bytecode generation, and virtual machine execution.
 
