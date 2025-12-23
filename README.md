@@ -37,6 +37,7 @@ V8-RS 是一个用 Rust 编写的简化版 JavaScript 引擎，旨在帮助开�
 
 - **[📘 完整教程](./docs/README_CN.md)** - 10 章系统教程
 - **[⚡ 快速开始](./docs/QUICKSTART.md)** - 10 分钟快速上手
+- **[📖 使用指南](./docs/USAGE.md)** - 详细使用说明
 
 ### 🚀 快速开始
 
@@ -45,14 +46,45 @@ V8-RS 是一个用 Rust 编写的简化版 JavaScript 引擎，旨在帮助开�
 git clone <repo-url>
 cd v8-rs
 
+# 构建项目
+cargo build --release
+
 # 运行测试
 cargo test
 
-# 运行示例
-cargo run --example basic
+# 启动 REPL（交互式模式）
+./target/release/v8_rs
+
+# 执行 JavaScript 文件
+./target/release/v8_rs test.js
 ```
 
 ### 💡 使用示例
+
+#### 作为独立可执行文件
+
+```bash
+# 启动交互式 REPL
+$ ./target/release/v8_rs
+V8-RS JavaScript Engine v0.1.0
+Type JavaScript code or 'exit' to quit
+
+> let x = 10
+Number(10.0)
+> let y = 20
+Number(20.0)
+> x + y
+Number(30.0)
+> exit
+Goodbye!
+
+# 执行 JavaScript 文件
+$ echo "let x = 5; x * x" > script.js
+$ ./target/release/v8_rs script.js
+Number(25.0)
+```
+
+#### 作为 Rust 库使用
 
 ```rust
 use v8_rs::Engine;
@@ -119,6 +151,7 @@ This project provides a complete tutorial to help you understand JavaScript engi
 
 - **[📘 Full Tutorial](./docs/README.md)** - 10-chapter systematic tutorial
 - **[⚡ Quick Start](./docs/QUICKSTART.md)** - Get started in 10 minutes
+- **[📖 Usage Guide](./docs/USAGE.md)** - Detailed usage instructions
 
 ### 🚀 Quick Start
 
@@ -127,14 +160,45 @@ This project provides a complete tutorial to help you understand JavaScript engi
 git clone <repo-url>
 cd v8-rs
 
+# Build the project
+cargo build --release
+
 # Run tests
 cargo test
 
-# Run examples
-cargo run --example basic
+# Start REPL (interactive mode)
+./target/release/v8_rs
+
+# Execute JavaScript file
+./target/release/v8_rs test.js
 ```
 
 ### 💡 Usage Example
+
+#### As a Standalone Executable
+
+```bash
+# Start interactive REPL
+$ ./target/release/v8_rs
+V8-RS JavaScript Engine v0.1.0
+Type JavaScript code or 'exit' to quit
+
+> let x = 10
+Number(10.0)
+> let y = 20
+Number(20.0)
+> x + y
+Number(30.0)
+> exit
+Goodbye!
+
+# Execute JavaScript file
+$ echo "let x = 5; x * x" > script.js
+$ ./target/release/v8_rs script.js
+Number(25.0)
+```
+
+#### As a Rust Library
 
 ```rust
 use v8_rs::Engine;
